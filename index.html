@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FunPlay - Mini Games</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🎮</div>
+      <div>
+        <h1>FunPlay</h1>
+        <small>Mini games. Big fun.</small>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <button class="icon-btn" id="soundBtn">🔊</button>
+      <button class="profile-btn" id="profileBtn">
+        <span class="avatar" id="avatar">P</span>
+        <span id="playerName">Player</span> ✎
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-main">
+      <div class="eyebrow">Your play zone</div>
+      <h2>Play more.<br>Level up. ✨</h2>
+      <p>Take a break, challenge your brain, and collect points.</p>
+    </div>
+
+    <div class="hero-side">
+      <div class="stat">⭐ Total points <strong id="totalPoints">0</strong></div>
+      <div class="stat">🏅 Highest level <strong id="highestLevel">1</strong></div>
+      <div class="stat">🎯 Games played <strong id="gamesPlayed">0</strong></div>
+    </div>
+  </section>
+
+  <main id="homeView">
+    <div class="section-head">
+      <h3>Choose a game</h3>
+      <p>Pick your challenge and start playing.</p>
+    </div>
+
+    <section class="games">
+      <article class="game-card" data-open="fruit">
+        <div class="game-icon">🍎</div>
+        <h4>Fruit Match</h4>
+        <p>Flip cards and match the same fruits.</p>
+        <span id="fruitLevel">Level 1</span>
+        <span>PLAY →</span>
+      </article>
+
+      <article class="game-card" data-open="word">
+        <div class="game-icon">🔤</div>
+        <h4>Word Hunt</h4>
+        <p>Find the hidden word one letter at a time.</p>
+        <span id="wordLevel">Level 1</span>
+        <span>PLAY →</span>
+      </article>
+
+      <article class="game-card" data-open="memory">
+        <div class="game-icon">🧠</div>
+        <h4>Memory Match</h4>
+        <p>Remember the cards and match every pair.</p>
+        <span id="memoryLevel">Level 1</span>
+        <span>PLAY →</span>
+      </article>
+    </section>
+
+    <section class="content-grid">
+      <div class="panel">
+        <h3>🏆 Leaderboard</h3>
+        <div id="leaderboard"></div>
+      </div>
+
+      <div class="panel">
+        <h3>🚀 Your progress</h3>
+        <strong id="progressTitle">Level 1</strong>
+        <span id="progressText">0 / 100 XP</span>
+        <div class="progress-wrap">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <p>Earn points by completing games.</p>
+        <button class="secondary" id="resetBtn">Reset progress</button>
+      </div>
+    </section>
+  </main>
+
+  <section class="game-view" id="gameView">
+    <div class="game-top">
+      <div>
+        <button class="secondary" id="backBtn">← Back</button>
+        <h3 id="gameHeading">Fruit Match</h3>
+      </div>
+
+      <div class="game-stats">
+        <div class="pill">LEVEL <b id="levelStat">1</b></div>
+        <div class="pill">MOVES <b id="movesStat">0</b></div>
+        <div class="pill">POINTS <b id="roundStat">0</b></div>
+      </div>
+    </div>
+
+    <div class="play-area">
+      <p class="game-instructions" id="instructions"></p>
+      <div id="wordTarget" class="word-target" hidden></div>
+      <div class="word-progress" id="wordProgress" hidden></div>
+      <div class="game-grid" id="gameGrid"></div>
+      <div class="game-message" id="gameMessage"></div>
+
+      <div class="game-controls">
+        <button class="primary" id="newGameBtn">↻ Restart level</button>
+        <button class="secondary" id="homeBtn">Home</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>Made for curious minds 💜 · FunPlay</footer>
+</div>
+
+<div class="overlay" id="profileModal">
+  <div class="modal">
+    <h2>👋 Your player profile</h2>
+    <p>Choose your player name.</p>
+    <input id="nameInput" maxlength="18" placeholder="Enter your name">
+    <div class="modal-actions">
+      <button class="secondary" id="cancelProfile">Cancel</button>
+      <button class="primary" id="saveProfile">Save profile</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="resultModal">
+  <div class="modal">
+    <div style="font-size:42px">🎉</div>
+    <h2 id="resultTitle">Level completed!</h2>
+    <p id="resultText"></p>
+    <div class="modal-actions">
+      <button class="secondary" id="resultHome">Home</button>
+      <button class="primary" id="nextLevel">Next level →</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
